@@ -1,4 +1,5 @@
-import React from 'react'
+import { TextField } from '@mui/material'
+import React, { useState } from 'react'
 import { Box, Heading, Text } from 'theme-ui'
 import PackageCards from '../components/Cards/PackageCards'
 
@@ -71,7 +72,49 @@ const packages = () => {
                           }
         }
     }
-    
+  
+    const [OriginalData, setOriginalData] = useState([
+      {   mainHeading:"Turmaline",
+      details:"Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica", 
+      link:"/gem_details",
+      location:"Pakistan",
+        image :  "https://carnegiemnh.org/wp-content/uploads/2022/01/CM4814-malachite-3-890x1024.jpg",
+      },{    mainHeading:"Gramblin",
+      details:"Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica", 
+      link:"/gem_details",
+      location:"Pakistan", image :  "https://www.worldatlas.com/r/w1200/upload/28/58/f6/shutterstock-385154203.jpg",
+        },{  mainHeading:"Sea Drop",
+        details:"Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica", 
+        link:"/gem_details",
+        location:"Pakistan",  image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC4y84WlokrJXLiXYXdn8FhicWebVvqKAike8mw2tQUwvjrv3cSyuYulZ6dL2tPlGoA3M&usqp=CAU",
+          },{  mainHeading:"Cisaca",
+          details:"Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica", 
+          link:"/gem_details",
+          location:"Pakistan",image : "https://i0.wp.com/mineriaenlinea.com/wp-content/uploads/2018/07/Cinabrio-y-mercurio-nativo.jpg?fit=504%2C357&ssl=1",
+            },{ mainHeading:"Basic",
+            details:"Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica", 
+            link:"/gem_details",
+            location:"Pakistan",image :"https://cms.alloprof.qc.ca//sites/default/files/importFiche/s1333i11.jpg",
+            },{ mainHeading:"Colabale",
+            details:"Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica", 
+            link:"/gem_details",
+            location:"Pakistan",image :"http://3.bp.blogspot.com/-_lbj_L5F_4E/VgWquXtC8qI/AAAAAAAACGE/mMRRFmtM8UI/s1600/EB0514CHALP4.jpg"
+         }
+        ]);
+    const [Data, setData] = useState(OriginalData)
+  
+  const handleChange = (e) => {
+    setData(
+      OriginalData.filter(
+        (name)=>(
+          (name.mainHeading.toUpperCase().includes(e.toUpperCase())) ||
+          (name.details.toUpperCase().includes(e.toUpperCase()))
+          
+        )
+      )
+    )
+  }
+
   return (
        <Box sx={styles.mainBox}>
 
@@ -81,6 +124,11 @@ const packages = () => {
             </Heading>
             <Text sx={{...styles.mainHeading,...{fontSize:"18px"}}}>Here are some of our gem stone extracted from our lands</Text>
         </Box>
+
+<Box sx={{marginX:"auto",marginBottom:"50px",width:"70%","@media (max-width : 450px)":{width:"90%"}}}>
+  <TextField onChange={(e)=>{handleChange(e.target.value)}} id="outlined-basic" label="Search here ..." variant="outlined" InputProps={{style:{color:"#cbaf22"}}} InputLabelProps={{style: { color: '#cbaf22' }}} sx={{width:"100%"}} />
+</Box>
+
         <Box sx={{display:"flex",justifyContent:"center",marginBottom:"25px"}}>
             <Box sx={styles.smallLine}>.</Box>
             <Box sx={styles.smallBox} >.</Box>
@@ -88,19 +136,10 @@ const packages = () => {
         </Box>
 
        <Box sx={{display:"flex",flexWrap:"wrap"}}>
-             <PackageCards mainHeading="Basic" details="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica" image={"https://carnegiemnh.org/wp-content/uploads/2022/01/CM4814-malachite-3-890x1024.jpg"}  link={"/packages_details"} location={"Pakistan"} />
-            <PackageCards mainHeading="Gold" details="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica" image={"https://www.worldatlas.com/r/w1200/upload/28/58/f6/shutterstock-385154203.jpg"}  link={"/packages_details"} location={"Pakistan"} />
-            <PackageCards mainHeading="Premium" details="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica" image={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC4y84WlokrJXLiXYXdn8FhicWebVvqKAike8mw2tQUwvjrv3cSyuYulZ6dL2tPlGoA3M&usqp=CAU"}  link={"/packages_details"} location={"Pakistan"} />
-            <PackageCards mainHeading="Basic" details="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica" image={"https://i0.wp.com/mineriaenlinea.com/wp-content/uploads/2018/07/Cinabrio-y-mercurio-nativo.jpg?fit=504%2C357&ssl=1"}  link={"/packages_details"} location={"Pakistan"} />
-            <PackageCards mainHeading="Gold" details="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica" image={"https://cms.alloprof.qc.ca//sites/default/files/importFiche/s1333i11.jpg"}  link={"/packages_details"} location={"Pakistan"} />
-            <PackageCards mainHeading="Premium" details="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica" image={"http://3.bp.blogspot.com/-_lbj_L5F_4E/VgWquXtC8qI/AAAAAAAACGE/mMRRFmtM8UI/s1600/EB0514CHALP4.jpg"}  link={"/packages_details"} location={"Pakistan"} />
-            <PackageCards mainHeading="Basic" details="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica" image={"https://images.newscientist.com/wp-content/uploads/2022/06/30232009/SEI_112453813.jpg"}  link={"/packages_details"} location={"Pakistan"} />
-            <PackageCards mainHeading="Gold" details="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica" image={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxhU_ftF7Ogw6ZmtI49CG6cBqkqufrw_Z8zqYnW9n0s-SwRV8MFnjBt5VtwkoX422qIRg&usqp=CAU"}  link={"/packages_details"} location={"Pakistan"} />
-            <PackageCards mainHeading="Premium" details="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica" image={"https://m.media-amazon.com/images/S/aplus-media/vc/c7743605-bee4-4f03-9188-39dc5c86c3bd.__CR0,0,970,600_PT0_SX970_V1___.jpg"}  link={"/packages_details"} location={"Pakistan"} />
-            <PackageCards mainHeading="Basic" details="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica" image={"https://cff2.earth.com/uploads/2022/07/05115258/Minerals-scaled.jpg"}  link={"/packages_details"} location={"Pakistan"} />
-            <PackageCards mainHeading="Gold" details="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica" image={"https://cdn.mos.cms.futurecdn.net/ShqBAazomzCe5Cs426G7nU-1200-80.jpg"}  link={"/packages_details"} location={"Pakistan"} />
-            <PackageCards mainHeading="Premium" details="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica" image={"https://i0.wp.com/imp.center/i/wp-content/uploads/sites/4/2016/12/Solid-Mineral-Resources.jpg?fit=1280%2C620&ssl=1"}  link={"/packages_details"} location={"Pakistan"} />
-   
+             {Data.map((gem,i)=>(
+             <PackageCards mainHeading={gem.mainHeading} details={gem.details} image={gem.image}  link={gem.link} location={gem.location} />
+            ))}
+
              </Box>
 </Box>
   )
