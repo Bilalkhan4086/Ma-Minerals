@@ -404,9 +404,9 @@ const about = () => {
         </Heading>
 
         <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "space-evenly" }}>
-          <TeamMember image={Member1} name={"Amjed Pervaiz"} position={"Team Leader"} facebook={"https://www.facebook.com/profile.php?id=100012243097496"} instagram={"https://www.instagram.com/premierpakistan"} twitter={"https://www.instagram.com/muhammadbilal3681/"} whatsapp={"https://wa.me/923448884086?text=I'm%20interested%20in%20your%20services%20let%20me%20know%20more"} />
-          <TeamMember image={Member2} name={"Kinza Fatima"} position={"Project Manager"} facebook={"https://www.facebook.com/profile.php?id=100012243097496"} instagram={"https://www.instagram.com/premierpakistan"} twitter={"https://www.instagram.com/muhammadbilal3681/"} whatsapp={"https://wa.me/923448884086?text=I'm%20interested%20in%20your%20services%20let%20me%20know%20more"} />
-          <TeamMember image={Member3} name={"Muhammad Hassan"} position={"Technical Supervisor"} facebook={"https://www.facebook.com/profile.php?id=100012243097496"} instagram={"https://www.instagram.com/premierpakistan"} twitter={"https://www.instagram.com/muhammadbilal3681/"} whatsapp={"https://wa.me/923448884086?text=I'm%20interested%20in%20your%20services%20let%20me%20know%20more"} />
+          <TeamMember image={Member1} name={"Amjed Pervaiz"} position={"Director Sales & Marketing"} facebook={"https://www.facebook.com/profile.php?id=100012243097496"} instagram={"https://www.instagram.com/premierpakistan"} twitter={"https://www.instagram.com/muhammadbilal3681/"} whatsapp={"https://wa.me/923135341211?text=I'm%20interested%20in%20your%20services%20let%20me%20know%20more"} />
+          <TeamMember image={Member3} name={"Jamshaid Khan "} position={"CEO in MA Minerals"} facebook={"https://www.facebook.com/profile.php?id=100012243097496"} instagram={"https://www.instagram.com/premierpakistan"} twitter={"https://www.instagram.com/muhammadbilal3681/"} whatsapp={"https://wa.me/923459728483?text=I'm%20interested%20in%20your%20services%20let%20me%20know%20more"} />
+          <TeamMember image={Member2} name={"Kinza Asraf"} position={"Guide"} facebook={"https://www.facebook.com/profile.php?id=100012243097496"} instagram={"https://www.instagram.com/premierpakistan"} twitter={"https://www.instagram.com/muhammadbilal3681/"} whatsapp={"https://wa.me/923448884086?text=I'm%20interested%20in%20your%20services%20let%20me%20know%20more"} />
         </Box>
 
       </Box>
