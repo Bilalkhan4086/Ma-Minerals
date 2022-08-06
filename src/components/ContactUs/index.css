@@ -1,0 +1,30 @@
+.iconStyles{
+    font-size: 40px;
+}
+.iconMargin{
+    margin:20px;
+}
+@media (max-width:500px) {
+    .iconStyles{
+        font-size: 30px;
+    }  
+    .iconMargin{
+        margin:10px;
+    }
+}
+@media (max-width:340px) {
+    .iconStyles{
+        font-size: 20px;
+    }  
+    .iconStyles2{
+        font-size: 14px;
+    }  
+    .iconMargin{
+        margin:5px;
+    }
+}
+@media screen and (max-width:350px) {
+    .logoText{
+display: none;
+    }   
+}

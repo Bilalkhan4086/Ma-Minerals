@@ -1,0 +1,47 @@
+@media screen and (min-width: 1151px) {
+    .card1{
+        position: relative;
+        animation: card10 14s reverse infinite;
+    }
+    .card2{
+        position: relative;
+        animation: card20 14s reverse infinite;
+    }
+    .card3{
+        position: relative;
+        animation: card30 14s reverse infinite;
+    }
+    .card4{
+        position: relative;
+        animation: card40 14s reverse infinite;
+    }
+    @keyframes card10 {
+        0% { right: 0px; bottom: 0%; transform: translate(-0%, 0%);}
+   25% { right: 0px; bottom: -100%; background-color: #002a4c;transform: translate(0%, 114.5%);}
+   50% { right: 0%; bottom: 100%; transform: translate(114.5%, 114.5%);}
+   75% { right: 0%; bottom: 0%; transform: translate(114.5%, 0%);}
+   100% { right: 0px; bottom: 0%; transform: translate(-0%, 0%);}
+      }
+      @keyframes card20 {
+          0% { right: 0px; bottom: 0%; transform: translate(-0%, 0%);}
+     25% { right: 0px; bottom: -100%;background-color: #002a4c; transform: translate(-114.5%, 0%);}
+     50% { right: 47%; bottom: 100%; transform: translate(0%, 114.5%);}
+     75% { right: 0%; bottom: 100%; transform: translate(-0%, 114.5%);}
+     100% { right: 0px; bottom: 0%; transform: translate(-0%, 0%);}
+        }
+      @keyframes card30 {
+     0% { left: 0%; top: 0%; transform: translate(-0%, 0%);}
+     25% { left: 0%; top: 0%;background-color: #002a4c;  transform: translate(114.5%, 0%);}
+     50% { left: 0%; top: 47%; transform: translate(114.5%, -114.5%);}
+     75% { left: 47%; top: 0%; transform: translate(-114.5%, -114.5%);}  
+     100% { left: 0%; top: 0%;transform: translate(0%, 0%);}
+   
+    }
+        @keyframes card40 {
+            0% { right: 0px; top: 0%; transform: translate(-0%, 0%);}
+       25% { right: 0px; top: 100%;background-color: #002a4c; transform: translate(0%, -114.5%);}
+       50% { right: 47%; top: 100%; transform: translate(-0%, -114.5%);}
+       75% { right: 47%; top: 0%; transform: translate(-0%, -0%);}
+       100% { right: 0px; top: 0%; transform: translate(-0%, 0%);}
+          }
+}

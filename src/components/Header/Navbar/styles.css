@@ -1,0 +1,26 @@
+#nav-dropdown{
+    background-color: rgb(6, 55, 133);
+}
+.logoColor{
+    /* color: rgb(16, 155, 173); */
+    color: rgb(255, 255, 255);
+font-size: 35px;
+}
+.logoColor2{
+    /* color: rgb(6, 55, 133); */
+    color: rgb(255, 255, 255);
+    font-style: italic;
+font-size: 35px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.navLinkColors{
+    color:rgb(16, 155, 173)
+}
+.row-col-8{
+    float:right;
+}
+@media screen and (max-width:350px) {
+    .logoText{
+display: none;
+    }   
+}
