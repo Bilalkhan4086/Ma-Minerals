@@ -16,6 +16,7 @@ export default function ActionAreaCard({mainHeading,image,location,details,link}
           height="140"
           image={image}
           alt="green iguana"
+          loading="lazy"
         />
         <CardContent>
           <Typography gutterBottom sx={{color:"#a2cfcd"}} variant="h5" component="div">

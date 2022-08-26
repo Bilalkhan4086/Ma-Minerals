@@ -15,6 +15,20 @@ module.exports = {
         // get this from the tawk script widget
         // https://tawk.to/chat/YOUR_TAWK_ID/YOUR_TAWK_KEY
       },
-    }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "_data",
+        path: `${__dirname}/src/_data`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-json`,
+      options: {
+        name: "_data",
+        path: `${__dirname}/src/_data`,
+      },
+    },
   ],
 }
