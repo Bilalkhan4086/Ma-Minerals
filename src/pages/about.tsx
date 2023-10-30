@@ -526,11 +526,11 @@ const about = () => {
             image={Member3}
             name={"Jamshaid Khan "}
             position={"CEO in MA Minerals"}
-            facebook={"https://www.facebook.com/profile.php?id=100012243097496"}
+            facebook={"https://facebook.com/profile.php?id=100009466657603"}
             instagram={"https://www.instagram.com/premierpakistan"}
             twitter={"https://www.instagram.com/muhammadbilal3681/"}
             whatsapp={
-              "https://wa.me/923459728483?text=I'm%20interested%20in%20your%20services%20let%20me%20know%20more"
+              "https://wa.me/923129828483?text=I'm%20interested%20in%20your%20services%20let%20me%20know%20more"
             }
           />
           <TeamMember
