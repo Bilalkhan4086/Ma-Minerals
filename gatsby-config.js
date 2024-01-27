@@ -25,15 +25,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        // The unique name for each instance
-        name: `pages`,
-        // Path to the directory
-        path: `${__dirname}/src/pages/`,
-      },
-    },
-    {
       resolve: `gatsby-transformer-json`,
       options: {
         name: "gem",
