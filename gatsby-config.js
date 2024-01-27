@@ -32,7 +32,7 @@ module.exports = {
         // Path to the directory
         path: `${__dirname}/src/pages/`,
       },
-    }
+    },
     {
       resolve: `gatsby-transformer-json`,
       options: {
