@@ -20,8 +20,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: "_data",
-        path: `${__dirname}/src/_data`,
+        name: "cms",
+        path: `${__dirname}/static/admin`,
       },
     },
     {
@@ -31,5 +31,6 @@ module.exports = {
         path: `${__dirname}/src/_data`,
       },
     },
+    `gatsby-transformer-remark`,
   ],
 }
