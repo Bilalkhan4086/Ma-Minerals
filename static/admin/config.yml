@@ -6,11 +6,18 @@ media_folder: "static/img"
 public_folder: "/img"
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "content/blog"
+  - name: "gem"
+    label: "Gem"
+    folder: "content/gem"
     create: true
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "date" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Title", name: "mainHeading", widget: "string" }
+      - { label: "Link", name: "link", widget: "relation" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "heading 1", name: "headingOne", widget: "string" }
+      - { label: "heading 2", name: "headingTwo", widget: "string" }
+      - { label: "Description 1", name: "desc1", widget: "markdown" }
+      - { label: "Description 2", name: "desc2", widget: "markdown" }
+      - { label: "Details", name: "details", widget: "markdown" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Image Main", name: "imageMain", widget: "image" }
