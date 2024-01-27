@@ -1,5 +1,6 @@
 import React from "react"
 import { Box, Typography } from "@mui/material"
+import Markdown from "react-markdown"
 
 const styles = {
   smallBox: {
@@ -94,10 +95,9 @@ const packages_details = ({ pageContext }) => {
               ...styles.mainHeading,
               ...{ fontSize: "16px", color: "#cbaf22" },
             }}
-            dangerouslySetInnerHTML={{
-              __html: pageContext?.desc1,
-            }}
-          />
+          >
+            <Markdown>{pageContext?.desc1}</Markdown>
+          </div>
         </Box>
         <Box
           sx={{
@@ -109,7 +109,11 @@ const packages_details = ({ pageContext }) => {
             justifyContent: "center",
           }}
         >
-          <img src={pageContext?.imageMain} alt="Not loaded" />
+          <img
+            src={pageContext?.imageMain}
+            style={{ maxWidth: "90%" }}
+            alt="Not loaded"
+          />
         </Box>
       </Box>
 
@@ -122,10 +126,9 @@ const packages_details = ({ pageContext }) => {
             ...styles.mainHeading,
             ...{ fontSize: "16px", color: "#cbaf22" },
           }}
-          dangerouslySetInnerHTML={{
-            __html: pageContext?.desc2,
-          }}
-        />
+        >
+          <Markdown>{pageContext?.desc2}</Markdown>
+        </div>
       </Box>
     </Box>
   )
