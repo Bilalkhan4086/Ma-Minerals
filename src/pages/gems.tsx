@@ -1,6 +1,6 @@
 import { TextField } from "@mui/material"
 import React, { useState } from "react"
-import { Box, Heading, Text } from "theme-ui"
+import { Box, Typography } from "@mui/material"
 import PackageCards from "../components/Cards/PackageCards"
 import { graphql } from "gatsby"
 
@@ -89,10 +89,10 @@ const packages = ({ data }) => {
   return (
     <Box sx={styles.mainBox}>
       <Box sx={styles.mainHeadingBox}>
-        <Heading sx={styles.mainHeading}>Gems & Minerals</Heading>
-        <Text sx={{ ...styles.mainHeading, ...{ fontSize: "18px" } }}>
+        <Typography sx={styles.mainHeading}>Gems & Minerals</Typography>
+        <Typography sx={{ ...styles.mainHeading, ...{ fontSize: "18px" } }}>
           Here are some of our gem stone extracted from our lands
-        </Text>
+        </Typography>
       </Box>
 
       <Box
@@ -108,6 +108,7 @@ const packages = ({ data }) => {
             handleChange(e.target.value)
           }}
           id="outlined-basic"
+          name="search"
           label="Search here ..."
           variant="outlined"
           InputProps={{ style: { color: "#cbaf22" } }}

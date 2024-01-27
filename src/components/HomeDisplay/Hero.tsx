@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Heading, Text, Button, Image } from "theme-ui"
+import { Box, Typography, Button } from "@mui/material"
 import "./styles.css"
 import { navigate } from "gatsby"
 import hero from "../../Images/hero.webp"
@@ -148,16 +148,18 @@ const Hero = () => {
         {/* left */}
         <Box sx={styles.leftBox}>
           <Box>
-            <Heading sx={styles.mainHeading}>Diging And Minings</Heading>
-            <Heading sx={styles.subHeading}>
+            <Typography sx={styles.mainHeading}>Diging And Minings</Typography>
+            <Typography sx={styles.subHeading}>
               Digging Deep: Mining Minerals and Gems
-            </Heading>
+            </Typography>
           </Box>
           <Box sx={styles.headingSeperator}>
-            <Text style={{ fontStyle: "italic", color: "#cbaf22" }}>
+            <Typography style={{ fontStyle: "italic", color: "#cbaf22" }}>
               Just Reach For Your Phone
-            </Text>
-            <Heading sx={styles.callBox}>Call us On +92 313 5341 211</Heading>
+            </Typography>
+            <Typography sx={styles.callBox}>
+              Call us On +92 313 5341 211
+            </Typography>
           </Box>
           <Box>
             <Button
@@ -180,7 +182,7 @@ const Hero = () => {
             },
           }}
         >
-          <Image src={hero} alt="Hero img" className="Himg" />
+          <img src={hero} alt="Hero img" className="Himg" />
         </Box>
       </Box>
     </Box>

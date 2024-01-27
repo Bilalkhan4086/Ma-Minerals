@@ -1,6 +1,6 @@
 import React from "react"
 import { navigate } from "gatsby"
-import { Box, Heading, Image } from "theme-ui"
+import { Box, Typography } from "@mui/material"
 import LocationOnIcon from "@mui/icons-material/LocationOn"
 import PublicIcon from "@mui/icons-material/Public"
 import EmailIcon from "@mui/icons-material/Email"
@@ -224,10 +224,10 @@ const ContactUs = () => {
           <Box sx={styles.leftBox}>
             {/* LOGO */}
             <Box>
-              <Image
+              <img
                 src={logo}
                 className="logoText"
-                sx={{ width: "100px", height: "50px" }}
+                style={{ width: "100px", height: "50px" }}
                 alt="Logo"
               />
               <img src={logo2} height="35px" width="130px" alt="Logo" />
@@ -286,28 +286,28 @@ const ContactUs = () => {
           {/* RightBox */}
 
           <Box sx={styles.RightBox}>
-            <Heading sx={styles.RightHeading}>Contact Us</Heading>
+            <Typography sx={styles.RightHeading}>Contact Us</Typography>
             {/* <Box sx={styles.contactDetails}> */}
 
-            <Heading sx={styles.LocationAndContact}>
+            <Typography sx={styles.LocationAndContact}>
               <span className="iconMargin">
                 <LocationOnIcon className="iconStyles2" />
               </span>
               Fazal ul Haq Road, Blue Area, Islamabad <br />
               Capital Territory, Pakistan-75400
-            </Heading>
-            <Heading sx={styles.LocationAndContact}>
+            </Typography>
+            <Typography sx={styles.LocationAndContact}>
               <span className="iconMargin">
                 <PublicIcon className="iconStyles2" />
               </span>
               www.maminerals.com
-            </Heading>
-            <Heading sx={styles.LocationAndContact}>
+            </Typography>
+            <Typography sx={styles.LocationAndContact}>
               <span className="iconMargin">
                 <EmailIcon className="iconStyles2" />
               </span>
               maminerals22@gmail.com
-            </Heading>
+            </Typography>
 
             <Box
               sx={styles.callBox}
@@ -315,13 +315,13 @@ const ContactUs = () => {
                 navigate("tel:+923448884086")
               }}
             >
-              <Heading sx={styles.smallCallHeading}>Call Now</Heading>
-              <Heading sx={styles.NumberHeading}>
+              <Typography sx={styles.smallCallHeading}>Call Now</Typography>
+              <Typography sx={styles.NumberHeading}>
                 <span className="iconMargin">
                   <LocalPhoneIcon className="iconStyles" />
                 </span>{" "}
                 92 313 5341211
-              </Heading>
+              </Typography>
               {/* </Box> */}
             </Box>
           </Box>

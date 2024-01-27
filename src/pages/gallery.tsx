@@ -1,7 +1,7 @@
 import * as React from "react"
 import ImageList from "@mui/material/ImageList"
 import ImageListItem from "@mui/material/ImageListItem"
-import { Box, Heading, Image, Spinner } from "theme-ui"
+import { Box, Typography, CircularProgress } from "@mui/material"
 import { IconButton, ImageListItemBar } from "@mui/material"
 import { Info } from "@mui/icons-material"
 import Dialogue from "../components/Dialogue/Dialogue"
@@ -85,7 +85,7 @@ export default function QuiltedImageList({ data }) {
   return (
     <Box>
       <Box sx={styles.mainBox2}>
-        <Heading sx={styles.mainHeading}>Our Gallery</Heading>
+        <Typography sx={styles.mainHeading}>Our Gallery</Typography>
         <Box
           sx={{
             display: "flex",
@@ -97,7 +97,9 @@ export default function QuiltedImageList({ data }) {
           <Box sx={styles.smallBox}>.</Box>
           <Box sx={styles.smallLine2}>.</Box>
         </Box>
-        <Heading sx={styles.subHeading}>Some Professional Pictures</Heading>
+        <Typography sx={styles.subHeading}>
+          Some Professional Pictures
+        </Typography>
       </Box>
 
       <Box
@@ -162,8 +164,8 @@ export default function QuiltedImageList({ data }) {
             >
               {data.allGemsJson.edges.map(item => (
                 <Box>
-                  <Image
-                    sx={{ margin: "10px auto" }}
+                  <img
+                    style={{ margin: "10px auto" }}
                     src={item.node.image}
                     alt={item.node.mainHeading}
                     loading="lazy"
@@ -190,7 +192,7 @@ export default function QuiltedImageList({ data }) {
             </Box>
           </>
         ) : (
-          <Spinner />
+          <CircularProgress />
         )}
       </Box>
       <Dialogue data={dataa} open={open} setOpen={setOpen} />

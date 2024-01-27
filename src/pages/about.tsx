@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Button, Heading, Image, Text } from "theme-ui"
+import { Box, Button, Typography } from "@mui/material"
 import TeamMember from "../components/Cards/TeamMember"
 import Bulb from "../Images/aboutPic.webp"
 import icon1 from "../Images/icon2.webp"
@@ -320,7 +320,7 @@ const about = () => {
   }
   return (
     <Box sx={{ marginY: "50px" }}>
-      <Heading
+      <Typography
         sx={{
           color: "#a2cfcd",
           textAlign: "center",
@@ -331,7 +331,7 @@ const about = () => {
         }}
       >
         About Us
-      </Heading>
+      </Typography>
       <Box sx={styles.underline}>
         <Box sx={{ ...styles.smallBox, ...{ marginX: "auto" } }}>.</Box>
         <Box sx={{ ...styles.smallLine, ...{ marginX: "auto" } }}>.</Box>
@@ -341,28 +341,30 @@ const about = () => {
         {/* left */}
         <Box sx={styles.leftSide}>
           <Box>
-            <Text sx={styles.smallHeading}>
+            <Typography sx={styles.smallHeading}>
               We make you near to Nature and Minerals
-            </Text>
+            </Typography>
             <Box sx={styles.underline2}>
               <Box sx={styles.smallBox}>.</Box>
               <Box sx={styles.smallLine}>.</Box>
             </Box>
             <Box>
-              <Heading sx={styles.headingLeft}>Want To Know About Us</Heading>
-              <Heading sx={styles.textLeft}>
+              <Typography sx={styles.headingLeft}>
+                Want To Know About Us
+              </Typography>
+              <Typography sx={styles.textLeft}>
                 It is a long established fact that a reader will be distracted
                 by the readable content of a page when looking at its layout.
                 The point of using Lorem Ipsum is that it has a more-or-less
                 normal distribution of letters, as opposed to using.
-              </Heading>
-              <Heading sx={styles.textLeft}>
+              </Typography>
+              <Typography sx={styles.textLeft}>
                 Many desktop publishing packages and web page editors now use
                 Lorem Ipsum as their default model text, and a search for 'lorem
                 ipsum' will uncover many web sites still in their infancy.
                 Various versions have evolved over the years, sometimes by
                 accident
-              </Heading>
+              </Typography>
             </Box>
           </Box>
           <Box>
@@ -392,7 +394,7 @@ const about = () => {
                   "@media(max-width:620px)": { width: "90%" },
                 }}
               >
-                <Image src={icon1} alt="icon is not loaded" width="80px" />
+                <img src={icon1} alt="icon is not loaded" width="80px" />
                 <Box
                   sx={{
                     dispaly: "flex",
@@ -404,7 +406,7 @@ const about = () => {
                     "@media(max-width:420px)": { width: "90%" },
                   }}
                 >
-                  <Heading
+                  <Typography
                     sx={{
                       fontSize: "22px",
                       fontFamily: "Montserrat, sans-serif",
@@ -413,8 +415,8 @@ const about = () => {
                     }}
                   >
                     Blue Rubi Gem
-                  </Heading>
-                  <Text
+                  </Typography>
+                  <Typography
                     sx={{
                       fontSize: "18px",
                       fontFamily: "Montserrat, sans-serif",
@@ -423,7 +425,7 @@ const about = () => {
                   >
                     It is a long established fact that a reader will be
                     distracted
-                  </Text>
+                  </Typography>
                 </Box>
               </Box>
               <Box
@@ -438,7 +440,7 @@ const about = () => {
                   "@media(max-width:620px)": { width: "90%" },
                 }}
               >
-                <Image src={icon2} alt="icon is not loaded" width="80px" />
+                <img src={icon2} alt="icon is not loaded" width="80px" />
                 <Box
                   sx={{
                     dispaly: "flex",
@@ -450,7 +452,7 @@ const about = () => {
                     "@media(max-width:420px)": { width: "90%" },
                   }}
                 >
-                  <Heading
+                  <Typography
                     sx={{
                       fontSize: "22px",
                       fontFamily: "Montserrat, sans-serif",
@@ -459,8 +461,8 @@ const about = () => {
                     }}
                   >
                     Ferozy Mineral
-                  </Heading>
-                  <Text
+                  </Typography>
+                  <Typography
                     sx={{
                       fontSize: "18px",
                       fontFamily: "Montserrat, sans-serif",
@@ -469,7 +471,7 @@ const about = () => {
                   >
                     It is a long established fact that a reader will be
                     distracted
-                  </Text>
+                  </Typography>
                 </Box>
               </Box>
             </Box>
@@ -478,9 +480,9 @@ const about = () => {
         {/* Right */}
         <Box>
           <Box sx={styles.RightSide}>
-            <Image
+            <img
               src={Bulb}
-              sx={styles.leftImage}
+              style={styles.leftImage}
               alt="Image is not Loaded due to connection"
             />
           </Box>
@@ -488,9 +490,9 @@ const about = () => {
       </Box>
 
       <Box sx={styles.mainBox2}>
-        <Heading id="Team" sx={styles.mainHeading}>
+        <Typography id="Team" sx={styles.mainHeading}>
           Our Experts
-        </Heading>
+        </Typography>
         <Box
           sx={{
             display: "flex",
@@ -502,7 +504,7 @@ const about = () => {
           <Box sx={styles.smallBox}>.</Box>
           <Box sx={styles.smallLine2}>.</Box>
         </Box>
-        <Heading sx={styles.subHeading}>Specialists Team</Heading>
+        <Typography sx={styles.subHeading}>Specialists Team</Typography>
 
         <Box
           sx={{

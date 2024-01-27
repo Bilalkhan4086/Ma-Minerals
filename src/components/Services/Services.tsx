@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Heading, Button } from "theme-ui"
+import { Box, Typography, Button } from "@mui/material"
 import Card from "../Cards/Card"
 import icon1 from "../../Images/icon1.webp"
 import icon2 from "../../Images/icon2.webp"
@@ -116,7 +116,7 @@ const styles = {
 const Services = () => {
   return (
     <Box sx={styles.mainBox}>
-      <Heading sx={styles.mainHeading}>Our Services</Heading>
+      <Typography sx={styles.mainHeading}>Our Services</Typography>
       <Box
         sx={{ display: "flex", justifyContent: "center", marginBottom: "25px" }}
       >
@@ -124,7 +124,7 @@ const Services = () => {
         <Box sx={styles.smallBox}>.</Box>
         <Box sx={styles.smallLine2}>.</Box>
       </Box>
-      <Heading sx={styles.subHeading}>Minerals we more focus</Heading>
+      <Typography sx={styles.subHeading}>Minerals we more focus</Typography>
       <Box sx={styles.cardBox}>
         <Card
           icon={icon1}

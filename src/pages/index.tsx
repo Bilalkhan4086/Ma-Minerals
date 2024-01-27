@@ -9,7 +9,7 @@ import Services from "../components/Services/Services"
 import Insight from "../components/Insights/Insights"
 import Packages from "../components/Packages/Packages"
 import GetUs from "../components/GetUs/GetUs"
-import { Box } from "theme-ui"
+import { Box } from "@mui/material"
 import "../css/main.css"
 
 export default function Home() {

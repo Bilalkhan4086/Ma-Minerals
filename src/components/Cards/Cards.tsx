@@ -2,7 +2,7 @@ import { Typography, Button } from "@mui/material"
 import { WhatsApp } from "@mui/icons-material"
 import { navigate } from "gatsby"
 import React from "react"
-import { Box } from "theme-ui"
+import { Box } from "@mui/material"
 
 const Cards = () => {
   return (
