@@ -33,9 +33,6 @@ const styles = {
       height: "500px",
     },
     "@media (max-width : 660px)": {
-      height: "900px",
-    },
-    "@media (max-width : 370px)": {
       height: "1000px",
     },
   },

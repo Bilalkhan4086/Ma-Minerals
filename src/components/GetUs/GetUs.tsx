@@ -40,17 +40,17 @@ const styles = {
       fontSize: "19px",
       width: "660px",
     },
-    "@media (max-width:699px ) and (min-width:550px )": {
+    "@media (max-width:699px ) and (min-width:600px )": {
       fontSize: "19px",
       width: "500px",
     },
-    "@media (max-width:549px ) and (min-width:300px )": {
+    "@media (max-width:599px ) and (min-width:380px )": {
       fontSize: "18px",
-      width: "95%",
+      width: "100%",
     },
-    "@media (max-width:299px )": {
+    "@media (max-width:379px )": {
       fontSize: "16px",
-      width: "95%",
+      width: "100%",
     },
   },
   buttonReadMore: {

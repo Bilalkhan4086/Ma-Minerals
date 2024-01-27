@@ -21,3 +21,5 @@ collections:
       - { label: "Details", name: "details", widget: "markdown" }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Main Image", name: "imageMain", widget: "image" }
+      - { label: "Columns", name: "cols", widget: "number" }
+      - { label: "Rows", name: "rows", widget: "number" }

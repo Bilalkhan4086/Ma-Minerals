@@ -77,7 +77,8 @@ const styles = {
     height: "50px",
     fontFamily: "Montserrat,sans-serif",
     fontSize: "16px",
-    width: "150px",
+    width: "200px",
+    color: "white",
     transition: "0.3s",
     cursor: "pointer",
     margin: "auto",
@@ -95,13 +96,13 @@ const styles = {
     "@media (min-width:1150px )": {
       borderRadius: "30px",
       height: "50px",
-      width: "170px",
+      width: "200px",
       fontSize: "18px",
     },
     "@media (max-width:1149px) and (min-width:301px )": {
       borderRadius: "30px",
       height: "50px",
-      width: "150px",
+      width: "200px",
       fontSize: "16px",
     },
     "@media (max-width:449px) and (min-width:301px )": {

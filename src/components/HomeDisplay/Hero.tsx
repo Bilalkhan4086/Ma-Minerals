@@ -7,7 +7,7 @@ import hero from "../../Images/hero.webp"
 const styles = {
   mainBox: {
     width: "100%",
-    "@media (min-width:580px )": {
+    "@media (min-width:1080px )": {
       height: "590px",
     },
   },
@@ -50,7 +50,7 @@ const styles = {
   subBox: {
     display: "flex",
     justifyContent: "space-around",
-    "@media (max-width:580px )": {
+    "@media (max-width:1080px )": {
       flexDirection: "column",
     },
   },
@@ -113,7 +113,8 @@ const styles = {
     borderRadius: "30px",
     height: "50px",
     fontSize: "18px",
-    width: "170px",
+    width: "180px",
+    color: "white",
     cursor: "pointer",
     transition: "0.3s",
     "&:hover": {
@@ -176,9 +177,12 @@ const Hero = () => {
         {/* Right */}
         <Box
           sx={{
+            maxWidth: "500px",
+            width: "95%",
+            justifyContent: "center",
+            display: "flex",
             "@media (max-width:380px)": {
-              display: "flex",
-              justifyContent: "center",
+              maxWidth: "300px",
             },
           }}
         >

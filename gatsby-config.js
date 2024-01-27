@@ -20,15 +20,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: "cms",
-        path: `${__dirname}/static/admin`,
+        name: "gem",
+        path: `${__dirname}/content`,
       },
     },
     {
       resolve: `gatsby-transformer-json`,
       options: {
-        name: "_data",
-        path: `${__dirname}/src/_data`,
+        name: "gem",
+        path: `${__dirname}/content`,
       },
     },
     `gatsby-transformer-remark`,

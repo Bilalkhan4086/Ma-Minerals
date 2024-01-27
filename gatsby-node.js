@@ -1,70 +1,42 @@
-// exports.createPages = async function ({ actions, graphql }) {
-//   const { data } = await graphql(`
-//     query dataInNode {
-//       allGemsJson {
-//         edges {
-//           node {
-//             mainHeading
-//             headingOne
-//             headingTwo
-//             imageMain
-//             desc2
-//             desc1
-//             link
-//           }
-//         }
-//       }
-//     }
-//   `)
-
-//   data.allGemsJson.edges.forEach(gem => {
-//     const slug = gem.node.link
-//     actions.createPage({
-//       path: slug,
-//       component: require.resolve(`./src/template/gem_details.tsx`),
-//       context: {
-//         mainHeading: gem.node.mainHeading,
-//         desc2: gem.node.desc2,
-//         heading1: gem.node.heading1,
-//         imageMain: gem.node.imageMain,
-//         desc1: gem.node.desc1,
-//         heading2: gem.node.heading2,
-//       },
-//     })
-//   })
-// }
-
-const path = require("path")
-
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-
-  const result = await graphql(`
-    query {
-      allGem {
-        nodes {
-          id
-          mainHeading
-          link
+exports.createPages = async function ({ actions, graphql }) {
+  const { data } = await graphql(`
+    query dataInNode {
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              mainHeading
+              headingOne
+              headingTwo
+              imageMain
+              desc2
+              desc1
+              link
+            }
+          }
         }
       }
     }
   `)
-
-  if (result.errors) {
-    throw result.errors
-  }
-
-  const gems = result.data.allGem.nodes
-
-  gems.forEach(gem => {
+  console.log("data.allMarkdownRemark.edges", data.allMarkdownRemark.edges)
+  data.allMarkdownRemark.edges.forEach(gem => {
     console.log("gem", gem)
-    createPage({
-      path: `/gems/${gem.link.toLowerCase().replace(/\s+/g, "-")}/`,
-      component: path.resolve("../src/template/gem-details.tsx"),
+    const gemContent = gem?.node?.frontmatter
+    const slug = `/gems/${gemContent.link
+      ?.toString()
+      .toLowerCase()
+      .replace(/\s+/g, "-")}`
+    actions.createPage({
+      path: slug,
+      component: require.resolve(`./src/template/gem_details.tsx`),
       context: {
-        // Pass data to the template
-        ...gem,
+        link: gemContent.link,
+        desc1: gemContent.desc1,
+        desc2: gemContent.desc2,
+        mainHeading: gemContent.mainHeading,
+        imageMain: gemContent.imageMain,
+        headingTwo: gemContent.headingTwo,
+        headingOne: gemContent.headingOne,
       },
     })
   })

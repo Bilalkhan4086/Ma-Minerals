@@ -4,85 +4,87 @@ import { Box, Typography } from "@mui/material"
 import PackageCards from "../components/Cards/PackageCards"
 import { graphql } from "gatsby"
 
-const packages = ({ data }) => {
-  const styles = {
-    smallBox: {
-      color: "#002a4c",
-      backgroundColor: "#cbaf22",
-      width: "7px",
-      height: "7px",
+const styles = {
+  smallBox: {
+    color: "#002a4c",
+    backgroundColor: "#cbaf22",
+    width: "7px",
+    height: "7px",
+  },
+  smallLine: {
+    color: "#002a4c",
+    backgroundColor: "#cbaf22",
+    width: "40px",
+    height: "1px",
+    marginTop: "3px",
+  },
+  smallLine2: {
+    color: "#002a4c",
+    backgroundColor: "#cbaf22",
+    width: "40px",
+    height: "1px",
+    marginTop: "3px",
+  },
+  mainHeading: {
+    fontFamily: "Montserrat, sans-serif",
+    fontWeight: 500,
+    fontSize: "25px",
+    color: "#a2cfcd",
+    margin: "auto",
+    marginBottom: "16px",
+  },
+  mainHeadingBox: {
+    display: "flex",
+    flexDirection: "column",
+    margin: "auto",
+    width: "100%",
+  },
+  mainBox: {
+    marginX: "80px",
+    marginY: "80px",
+    "@media (max-width:450px )": {
+      marginX: "10px",
     },
-    smallLine: {
-      color: "#002a4c",
-      backgroundColor: "#cbaf22",
-      width: "40px",
-      height: "1px",
-      marginTop: "3px",
+  },
+  subHeading: {
+    fontFamily: "Montserrat, sans-serif",
+    fontWeight: 600,
+    textAlign: "center",
+    fontSize: "40px",
+    color: "#a2cfcd",
+    margin: "auto",
+    marginBottom: "16px",
+    "@media (max-width:1150px ) and (min-width:900px )": {
+      fontSize: "50px",
     },
-    smallLine2: {
-      color: "#002a4c",
-      backgroundColor: "#cbaf22",
-      width: "40px",
-      height: "1px",
-      marginTop: "3px",
-    },
-    mainHeading: {
-      fontFamily: "Montserrat, sans-serif",
-      fontWeight: 500,
-      fontSize: "25px",
-      color: "#a2cfcd",
-      margin: "auto",
-      marginBottom: "16px",
-    },
-    mainHeadingBox: {
-      display: "flex",
-      flexDirection: "column",
-      margin: "auto",
-      width: "100%",
-    },
-    mainBox: {
-      marginX: "80px",
-      marginY: "80px",
-      "@media (max-width:450px )": {
-        marginX: "10px",
-      },
-    },
-    subHeading: {
-      fontFamily: "Montserrat, sans-serif",
-      fontWeight: 600,
-      textAlign: "center",
+    "@media (max-width:899px ) and (min-width:700px )": {
       fontSize: "40px",
-      color: "#a2cfcd",
-      margin: "auto",
-      marginBottom: "16px",
-      "@media (max-width:1150px ) and (min-width:900px )": {
-        fontSize: "50px",
-      },
-      "@media (max-width:899px ) and (min-width:700px )": {
-        fontSize: "40px",
-      },
-      "@media (max-width:699px ) and (min-width:550px )": {
-        fontSize: "35px",
-      },
-      "@media (max-width:549px ) and (min-width:300px )": {
-        fontSize: "30px",
-      },
-      "@media (max-width:299px )": {
-        fontSize: "25px",
-      },
     },
-  }
+    "@media (max-width:699px ) and (min-width:550px )": {
+      fontSize: "35px",
+    },
+    "@media (max-width:549px ) and (min-width:300px )": {
+      fontSize: "30px",
+    },
+    "@media (max-width:299px )": {
+      fontSize: "25px",
+    },
+  },
+}
+const packages = ({ data }) => {
   console.log("data is here :", data)
 
-  const [Data, setData] = useState(data.allGemsJson.edges)
+  const [Data, setData] = useState(data.allMarkdownRemark.edges)
 
   const handleChange = e => {
     setData(
-      data.allGemsJson.edges.filter(
-        name =>
-          name.node.mainHeading.toUpperCase().includes(e.toUpperCase()) ||
-          name.node.details.toUpperCase().includes(e.toUpperCase())
-      )
+      data.allMarkdownRemark.edges.filter(gem => {
+        const gemContent = gem?.node?.frontmatter
+        return (
+          gemContent.mainHeading.toUpperCase().includes(e.toUpperCase()) ||
+          gemContent.details.toUpperCase().includes(e.toUpperCase())
+        )
+      })
     )
   }
 
@@ -107,8 +109,7 @@ const packages = ({ data }) => {
           onChange={e => {
             handleChange(e.target.value)
           }}
-          id="outlined-basic"
-          name="search"
+          // name="search"
           label="Search here ..."
           variant="outlined"
           InputProps={{ style: { color: "#cbaf22" } }}
@@ -126,15 +127,18 @@ const packages = ({ data }) => {
       </Box>
 
       <Box sx={{ display: "flex", flexWrap: "wrap" }}>
-        {Data.map((gem, i) => (
-          <PackageCards
-            mainHeading={gem.node.mainHeading}
-            details={gem.node.details}
-            image={gem.node.image}
-            link={gem.node.link}
-            location={gem.node.location}
-          />
-        ))}
+        {Data.map(gem => {
+          const gemContent = gem?.node?.frontmatter
+          return (
+            <PackageCards
+              mainHeading={gemContent.mainHeading}
+              details={gemContent.details}
+              image={gemContent.image}
+              link={gemContent.link}
+              location={gemContent.location}
+            />
+          )
+        })}
       </Box>
     </Box>
   )
@@ -144,14 +148,16 @@ export default packages
 
 export const query = graphql`
   query dataInGemstsx {
-    allGemsJson {
+    allMarkdownRemark {
       edges {
         node {
-          mainHeading
-          image
-          link
-          location
-          details
+          frontmatter {
+            mainHeading
+            location
+            link
+            image
+            details
+          }
         }
       }
     }

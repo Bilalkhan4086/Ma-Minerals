@@ -1,27 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Montserrat:wght@100;500;800;900&display=swap');
-.mainHeading{
-    font-size:"60px";
-    color:#002A4C;
+@import url("https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Montserrat:wght@100;500;800;900&display=swap");
+.mainHeading {
+  font-size: "60px";
+  color: #002a4c;
 }
-.mainDiv{
-    font-family: 'Montserrat', sans-serif;
+.mainDiv {
+  font-family: "Montserrat", sans-serif;
+}
+.subHeading {
+  color: #65af4e;
+}
+.callDiv {
+  font-weight: 800;
+  font-size: 18px;
+  color: #002a4c;
+}
 
+.Himg {
+  max-width: 500px;
+  width: 95%;
+  position: relative;
+  animation: mymove 1.5s alternate-reverse infinite;
 }
-.subHeading{
-    color:#65af4e
-}
-.callDiv{
-    font-weight: 800;
-    font-size: 18px;
-    color: #002A4C;
+@media (max-width: 380px) {
+  .Himg {
+    max-width: 300px;
+    width: 95%;
+  }
 }
 
-.Himg{
-    position: relative;
-    animation: mymove 1.5s alternate-reverse infinite;
+@keyframes mymove {
+  from {
+    top: 0px;
   }
-  
-  @keyframes mymove {
-    from {top: 0px;}
-    to {top: 30px;}
+  to {
+    top: 30px;
   }
+}

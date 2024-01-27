@@ -74,12 +74,13 @@ export default function QuiltedImageList({ data }) {
   const [load, setload] = React.useState(false)
   const [dataa, setdataa] = React.useState("")
 
-  const handleClickOpen = (name, Data) => () => {
+  const handleClickOpen = (name, _data) => () => {
     setOpen(true)
-    setdataa(name + " " + Data)
+    console.log("name", name)
+    console.log("_data 80", _data)
+    setdataa(name + " " + _data)
   }
   React.useEffect(() => {
-    console.log(open)
     setload(true)
   }, [open, load])
   return (
@@ -118,40 +119,43 @@ export default function QuiltedImageList({ data }) {
               cols={6}
               rowHeight={190}
             >
-              {data.allGemsJson.edges.map(item => (
-                <ImageListItem
-                  key={item.node.image}
-                  cols={item.node.cols || 1}
-                  rows={item.node.rows || 1}
-                >
-                  <img
-                    {...srcset(
-                      item.node.image,
-                      190,
-                      item.node.rows,
-                      item.node.cols
-                    )}
-                    alt={item.node.mainHeading}
-                    loading="lazy"
-                  />
-                  <ImageListItemBar
-                    title={item.node.mainHeading}
-                    actionIcon={
-                      <IconButton
-                        sx={{ color: "rgba(255, 255, 255, 0.54)" }}
-                        aria-label={`info about ${item.node.mainHeading}`}
-                      >
-                        <Info
-                          onClick={handleClickOpen(
-                            item.node.mainHeading,
-                            item.node.details
-                          )}
-                        />
-                      </IconButton>
-                    }
-                  />
-                </ImageListItem>
-              ))}
+              {data.allMarkdownRemark.edges.map(item => {
+                const gemContent = item?.node?.frontmatter
+                return (
+                  <ImageListItem
+                    key={gemContent.image}
+                    cols={gemContent.cols || 1}
+                    rows={gemContent.rows || 1}
+                  >
+                    <img
+                      {...srcset(
+                        gemContent.image,
+                        190,
+                        gemContent.rows,
+                        gemContent.cols
+                      )}
+                      alt={gemContent.mainHeading}
+                      loading="lazy"
+                    />
+                    <ImageListItemBar
+                      title={gemContent.mainHeading}
+                      actionIcon={
+                        <IconButton
+                          sx={{ color: "rgba(255, 255, 255, 0.54)" }}
+                          aria-label={`info about ${gemContent.mainHeading}`}
+                        >
+                          <Info
+                            onClick={handleClickOpen(
+                              gemContent.mainHeading,
+                              gemContent.details
+                            )}
+                          />
+                        </IconButton>
+                      }
+                    />
+                  </ImageListItem>
+                )
+              })}
             </ImageList>
             <Box
               sx={{
@@ -162,33 +166,36 @@ export default function QuiltedImageList({ data }) {
                 "@media(min-width:700px)": { display: "none" },
               }}
             >
-              {data.allGemsJson.edges.map(item => (
-                <Box>
-                  <img
-                    style={{ margin: "10px auto" }}
-                    src={item.node.image}
-                    alt={item.node.mainHeading}
-                    loading="lazy"
-                  />
-                  <ImageListItemBar
-                    sx={{ position: "relative" }}
-                    title={item.node.mainHeading}
-                    actionIcon={
-                      <IconButton
-                        sx={{ color: "rgba(255, 255, 255, 0.54)" }}
-                        aria-label={`info about ${item.node.mainHeading}`}
-                      >
-                        <Info
-                          onClick={handleClickOpen(
-                            item.node.mainHeading,
-                            item.node.details
-                          )}
-                        />
-                      </IconButton>
-                    }
-                  />
-                </Box>
-              ))}
+              {data?.allMarkdownRemark?.edges?.map(item => {
+                const gemContent = item?.node?.frontmatter
+                return (
+                  <Box>
+                    <img
+                      style={{ margin: "10px auto", width: "100%" }}
+                      src={gemContent.image}
+                      alt={gemContent.mainHeading}
+                      loading="lazy"
+                    />
+                    <ImageListItemBar
+                      sx={{ position: "relative" }}
+                      title={gemContent.mainHeading}
+                      actionIcon={
+                        <IconButton
+                          sx={{ color: "rgba(255, 255, 255, 0.54)" }}
+                          aria-label={`info about ${gemContent.mainHeading}`}
+                        >
+                          <Info
+                            onClick={handleClickOpen(
+                              gemContent.mainHeading,
+                              gemContent.details
+                            )}
+                          />
+                        </IconButton>
+                      }
+                    />
+                  </Box>
+                )
+              })}
             </Box>
           </>
         ) : (
@@ -202,13 +209,16 @@ export default function QuiltedImageList({ data }) {
 
 export const query = graphql`
   query data {
-    allGemsJson {
+    allMarkdownRemark {
       edges {
         node {
-          mainHeading
-          image
-          cols
-          rows
+          frontmatter {
+            mainHeading
+            details
+            image
+            cols
+            rows
+          }
         }
       }
     }

@@ -115,7 +115,14 @@ export default function DrawerAppBar(props: Props) {
               <Link
                 href={item.link}
                 key={item.link}
-                sx={{ color: "rgba(0,42,76,1)", textDecoration: "none", mx: 2 }}
+                sx={{
+                  color: "rgba(0,42,76,1)",
+                  textDecoration: "none",
+                  mx: 2,
+                  "@media (max-width:700px)": {
+                    mx: 1,
+                  },
+                }}
               >
                 {item.name}
               </Link>

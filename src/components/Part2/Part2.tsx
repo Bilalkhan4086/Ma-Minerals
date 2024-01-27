@@ -91,7 +91,8 @@ const styles = {
     borderRadius: "30px",
     height: "50px",
     fontSize: "16px",
-    width: "150px",
+    width: "160px",
+    color: "white",
     cursor: "pointer",
     transition: "0.3s",
     "&:hover": {
@@ -199,21 +200,22 @@ const styles = {
     },
   },
   leftImage: {
-    width: "500px",
+    maxWidth: "500px",
+    width: "95%",
     "@media (max-width:1150px ) and (min-width:900px )": {
-      width: "860px",
+      maxWidth: "860px",
     },
     "@media (max-width:899px ) and (min-width:700px )": {
-      width: "660px",
+      maxWidth: "660px",
     },
     "@media (max-width:699px ) and (min-width:550px )": {
-      width: "500px",
+      maxWidth: "500px",
     },
     "@media (max-width:549px ) and (min-width:300px )": {
-      width: "95%",
+      maxWidth: "95%",
     },
     "@media (max-width:299px )": {
-      width: "95%",
+      maxWidth: "95%",
     },
   },
 }
@@ -263,7 +265,7 @@ const Part2 = () => {
           <Box className="card1" sx={styles.CardBox}>
             <img
               src={icon5}
-              style={{ width: "100px", height: "102px", marginX: "auto" }}
+              style={{ width: "100px", height: "102px", margin: "auto" }}
               alt="no Loaded"
             />
             <Typography sx={styles.CardHeading}>Gold Mining</Typography>
@@ -284,7 +286,7 @@ const Part2 = () => {
           <Box className="card2" sx={styles.CardBox}>
             <img
               src={icon6}
-              style={{ width: "100px", height: "102px", marginX: "auto" }}
+              style={{ width: "100px", height: "102px", margin: "auto" }}
               alt="no Loaded"
             />
             <Typography sx={styles.CardHeading}>Gems Mining</Typography>
@@ -305,7 +307,7 @@ const Part2 = () => {
           <Box className="card3" sx={styles.CardBox}>
             <img
               src={icon7}
-              sx={{ width: "100px", height: "102px", marginX: "auto" }}
+              style={{ width: "100px", height: "102px", margin: "auto" }}
               alt="no Loaded"
             />
             <Typography sx={styles.CardHeading}>Copper Mining</Typography>
@@ -326,7 +328,7 @@ const Part2 = () => {
           <Box className="card4" sx={styles.CardBox}>
             <img
               src={icon8}
-              style={{ width: "100px", height: "102px", marginX: "auto" }}
+              style={{ width: "100px", height: "102px", margin: "auto" }}
               alt="no Loaded"
             />
             <Typography sx={styles.CardHeading}>Mineral Mining</Typography>
