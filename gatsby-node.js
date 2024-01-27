@@ -60,7 +60,7 @@ exports.createPages = async ({ graphql, actions }) => {
   gems.forEach(gem => {
     console.log("gem", gem)
     createPage({
-      path: `/gems/${gem.link.title.toLowerCase().replace(/\s+/g, "-")}/`,
+      path: `/gems/${gem.link.toLowerCase().replace(/\s+/g, "-")}/`,
       component: path.resolve("../src/template/gem-details.tsx"),
       context: {
         // Pass data to the template
