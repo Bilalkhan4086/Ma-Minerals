@@ -21,7 +21,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: "gem",
-        path: `${__dirname}/content`,
+        path: `${__dirname}/content/gem`,
       },
     },
     {
@@ -37,7 +37,7 @@ module.exports = {
       resolve: `gatsby-transformer-json`,
       options: {
         name: "gem",
-        path: `${__dirname}/content`,
+        path: `${__dirname}/content/gem`,
       },
     },
     `gatsby-transformer-remark`,
