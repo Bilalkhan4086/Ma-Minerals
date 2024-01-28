@@ -4,27 +4,21 @@ link: copper
 location: Pakistan
 headingOne: Copper Ore
 headingTwo: Copper, silver, and gold are in group 11 of the periodic table
-desc1: >-
-  There are 29 [isotopes](https://en.wikipedia.org/wiki/Isotope "Isotope") of
-  copper. 63 and 65 \
-
-  Cu \
-
-  are stable, with 6 \
-
-  Cu \
-
-   comprising approximately 69% of naturally occurring copper; both have a [spin](https://en.wikipedia.org/wiki/Spin_(physics) "Spin (physics)") of.[](https://en.wikipedia.org/wiki/Copper#cite_note-nubase-22) The other isotopes are [radioactive](https://en.wikipedia.org/wiki/Radioactivity "Radioactivity"), with the most stable being 67 \
-
-  Cu \
-
-   with a [half-life](https://en.wikipedia.org/wiki/Half-life "Half-life") of 61.83 hours. [\[22]](https://en.wikipedia.org/wiki/Copper#cite_note-nubase-22) Seven [metastable isomers](https://en.wikipedia.org/wiki/Nuclear_isomer "Nuclear isomer") have been characterized; 68m \
-
-  Cu \
-
-   is the longest-lived with a half-life of 3.8 minutes. Isotopes with a [mass number](https://en.wikipedia.org/wiki/Mass_number "Mass number") above 64 decay by [β−](https://en.wikipedia.org/wiki/Beta_decay "Beta decay"), whereas those with a mass number below 64 decay by [β+](https://en.wikipedia.org/wiki/Positron_emission "Positron emission"). [64 \
-
-  Cu](https://en.wikipedia.org/wiki/Copper-64 "Copper-64"), which has a half-life of 12.7 hours, decays both ways.
+desc1: There are 29 [isotopes](https://en.wikipedia.org/wiki/Isotope) of copper.
+  63 and 65 Cu are stable, with 6 Cu comprising approximately 69% of naturally
+  occurring copper; both have a
+  [spin](https://en.wikipedia.org/wiki/Spin_(physics)) of. The other isotopes
+  are [radioactive](https://en.wikipedia.org/wiki/Radioactivity), with the most
+  stable being 67 Cu with a [half-life](https://en.wikipedia.org/wiki/Half-life)
+  of 61.83 hours. Seven [metastable
+  isomers](https://en.wikipedia.org/wiki/Nuclear_isomer) have been
+  characterized; 68m Cu is the longest-lived with a half-life of 3.8 minutes.
+  Isotopes with a [mass number](https://en.wikipedia.org/wiki/Mass_number) above
+  64 decay by [β−](https://en.wikipedia.org/wiki/Beta_decay), whereas those with
+  a mass number below 64 decay by
+  [β+](https://en.wikipedia.org/wiki/Positron_emission). [64
+  Cu](https://en.wikipedia.org/wiki/Copper-64), which has a half-life of 12.7
+  hours, decays both ways.
 desc2: >-
   Copper is produced in massive stars and is present in the Earth's crust in a
   proportion of about 50 parts per million (ppm). In nature, copper occurs in a
